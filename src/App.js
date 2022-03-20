@@ -18,7 +18,7 @@ function App() {
     handleRandomQuote()
   },[])
   return <div className='p-5 w-full h-full justify-center items-center'>
-    <button className='h-auto ml-auto block' onClick={handleRandomQuote}>random <i className="fas fa-sync-alt ml-1"></i></button>
+    <button className='h-auto ml-auto block' onClick={handleRandomQuote}>new random quote <i className="fas fa-sync-alt ml-1"></i></button>
     {isVisible
     ? 
     (<div>    
@@ -39,7 +39,7 @@ function App() {
     (<div className='pb-20 mx-auto'>
       <h1 className='ml-14 text-xl'>{data.author}</h1>
         {authorData.map(data=>
-        (<div className='block mt-32 justify-center items-center flex-col'>
+        (<div key={data.content} className='block mt-32 justify-center items-center flex-col'>
           <p className='text-xl w-4/12 mx-auto border-l-4 border-yellow-200 pl-12'>"{data.content}"</p>
       </div>))}
     </div>
